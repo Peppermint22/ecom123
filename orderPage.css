@@ -1,0 +1,762 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 9%;
+    background: rgb(29, 30, 31);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: rgb(255, 255, 255);
+    color: var(--black);
+    font-size: 2.5rem;
+    margin-right: .3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header P{
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.header .logo{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+}
+
+.header img{
+    max-height: 5.4rem;
+    width: auto;
+    display: block;
+}
+
+.header .navbar a{
+    font-size: 1.2rem;
+    margin: 0 2.3rem;
+    color: rgb(0, 0, 0);
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+.title-page {
+    padding: 20px;
+    text-align: left;
+    padding-top: 13rem;
+    padding-left: 15rem;
+    padding-bottom: 5rem;
+    background-color: black;
+    color: white;
+
+}
+
+.title-page img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.title-content {
+    width: 100%;
+}
+
+.title-content h1 {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+
+.title-content p {
+    margin: 3rem 0;
+    font-size: 1.5rem;
+}
+
+.title-content a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.title-content a:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+@media (max-width: 528px) {
+    .title-page {
+        padding-left: 5rem;
+        padding-bottom: 4rem;
+    }
+    .title-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .title-content p {
+        font-size: 1rem;
+    }
+}
+
+.order-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 9%;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 850;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.current-time {
+    font-size: 1.5rem;
+}
+
+.cart-button {
+    padding: 10px 30px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.cart-button i {
+    margin-right: 10px;
+}
+
+.add-to-cart span{
+    margin-left: 10px;
+}
+
+.cart-button:hover {
+    background-color: #3d3d3d;
+}
+
+.cart-button.disabled {
+    background-color: #999999; 
+    cursor: not-allowed; 
+    opacity: 0.6; 
+    pointer-events: none;
+}
+
+.cart-container .cart {
+    position: fixed;
+    top: 0;
+    right: -40%;
+    width: 40%;
+    height: 100%;
+    background-color: #fff; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); 
+    transition: right 0.3s ease;
+    z-index: 1000; 
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}  
+.cart-container .cart.show {
+    right: 0;
+    height: 100vh;
+}
+
+
+.cart-container .cart h1 {
+    padding: 20px;
+    font-size: 2rem;
+    border-bottom: 1px solid #ddd;
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.cart-container .cart-items {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+.cart-container .cart-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-container .cart-item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-left: 11.8px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.cart-container .cart-item-image img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.cart-container .cart-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cart-container .cart-itemname-toppings {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    flex: 1;
+}
+
+.cart-container .cart-itemname-toppings h4{
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.cart-container .cart-itemname-toppings p{
+    margin: 5px 0 0;
+    font-size: 1.4rem;
+    color: #555;
+
+}
+
+
+.cart-container .cart-item-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 30px;
+}
+
+.cart-container .cart-item-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 30px;
+    
+}
+
+.cart-container .cart-item-counter {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    gap: 1rem;
+}
+
+.cart-container .cart-item-buttons .cart-item-counter button{
+    margin: 0 10px; 
+    padding: 6px 10px;
+    background-color: #ffffff; 
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+}
+
+.cart-container .cart-item-buttons .cart-item-counter button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.cart-container .cart-item-buttons .remove-item{
+    padding: 8px 12px; 
+    background-color: #000; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-container .cart-item-remove_edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    margin-right: 30px;
+}
+
+.cart-container .remove-item:hover {
+    color: #333;
+    background-color: #e6e6e6;
+}
+
+.cart-container .cart-subtotal,
+.cart-container .cart-delivery,
+.cart-container .cart-total {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.cart-container .cart-subtotal,
+.cart-container .cart-delivery {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    z-index: 1001;
+}
+
+.cart-container .cart-total {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1001; 
+}
+
+.cart-container .cart-subtotal, .cart-container .cart-delivery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-container .cart-subtotal span, .cart-container .cart-delivery span{
+    font-size: 1.5rem;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.cart-container .cart-total .total-info {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.cart-container .checkout-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #000000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-container .checkout-button:hover {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.container-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.container-menu .menu-options h1{
+    margin-left: 3rem;
+    font-size: 2rem;
+}
+
+.container-menu .menu-list h1{
+    font-size: 2rem;
+}
+
+.menu-options {
+    position: sticky;
+    top: 75px;
+    z-index: 800;
+    height: calc(100vh - 96px);
+    width: 23%; 
+    background-color: #f0f0f0;
+    padding: 40px;
+    padding-right: 0;
+    margin-left: 7rem;
+    box-sizing: border-box;
+}
+
+.list-and-contacts {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu-options h1{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.menu-list h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contacts h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contacts p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contacts p.phone_c{
+    margin-bottom: 3.5rem;
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contacts p.address_c{
+    margin-bottom: 3.5rem;
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contacts select{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color: white;
+    cursor: pointer;
+    background: black;
+}
+
+.menutitle{
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+    color: #7a7a7a;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-list {
+    flex: 2;
+    padding: 20px;
+    border-left: 1px solid #c2c2c2;
+    border-right: 1px solid #c2c2c2;
+}
+
+.contacts {
+    flex: 1;
+    padding: 20px;
+}
+
+.menu-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    color: #4f4f4f;
+    font-size: 2rem;
+}
+
+.menu-options a{
+    padding-left: 30px;
+}
+
+.menu-button:hover {
+    background-color: #e7e7e7;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    height: 200px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-description {
+    flex: 3;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.item-description h3 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.item-description .description {
+    font-size: 1.4rem;
+    color: #7a7a7a;
+    margin-left: 1rem;
+}
+
+.item-description .price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.item-image {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.menu-item .item-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.menu-item:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 528px) {
+    .container-menu {
+        padding: 20px;
+    }
+    .menu-options,
+    .menu-list,
+    .contacts {
+    padding: 0;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 900;
+    display: none;
+    backdrop-filter: blur(5px);
+}
+
+.order-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 40%;
+    height: 95%;
+    max-width: 600px;
+    max-height: 800px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: px;
+    box-shadow: 0 0 10px rgba(0, 0.1, 0.3, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.order-form h3{
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.order-form p{
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+.order-form .toppings h3{
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.order-form .toppings {
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 2;
+}
+
+.order-form .order-actions{
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+.order-form .order-actions .add-to-cart{
+    font-family:  Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+.order-form .order-actions .add-to-cart button{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+    background: black;
+}
+
+.order-form .order-actions .add-to-cart button:hover{
+    color: black;
+    background: green;
+}
+
+.order-form .order-actions .add-to-cart span{
+    color: white;
+}
+
+.order-form.show, .overlay.show {
+    display: block;
+}
+
+
+.order-form .item-image_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-form .item-image_form img {
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+
+.title_form {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.description-image_form {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+}
+
+.description_form {
+    padding-bottom: 10px; 
+}
+
+.item-image_form {
+    height: 200px;
+    overflow: hidden;
+}
+
+.item-image_form img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.toppings {
+    margin-top: 20px;
+}
+
+.order-actions {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: calc(100% - 60px);
+    background-color: white;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-actions .item-counter {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.order-actions .add-to-cart {
+    flex: 1;
+    text-align: right;
+}

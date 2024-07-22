@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doki-Doki Order Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Photos/Logobruh.png" />
+    <link rel="stylesheet" href="orderPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="logo"> 
+            <img src="Photos/Logobruh.png" alt="Doki-Doki Takoyaki Logo" a href>
+        </img>
+    
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="menus.html">MENUS</a>
+            <a href="story.html">STORY</a>
+        </nav> 
+
+
+
+        <div class="icons">
+ 
+            <div class="fas fa-user" id="login-btn"></div>
+            <p>USER</p>
+        </div>
+    </header>
+
+    <section class="title-page">
+        <div class="container">
+            <div class="title-content">
+                <h1>Doki-doki Takoyaki</h1>
+                <p>(Block 120, Las Palmas Subdivision, Lot 61 Hyacinth, Santa Maria, 3022 Bulacan)</p>
+                <a href="https://maps.app.goo.gl/38ujfVPLskRHxvqz8"><span>MORE INFO</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-section">
+        <div class="current-time">
+            <p id="current-time"></p>
+        </div>
+        <div class="add-to-cart">
+            <button class="cart-button" onclick="toggleCart()"><i class="fa-solid fa-cart-shopping"></i><span id="displaytotal-items">0</span><span>item/s</span><span id="cart-displaytotal-price">₱0.00</span></button>
+        </div>
+    </section>
+
+    <section class="cart-container">
+        <div class="cart" id="cart">
+            <h1>Your Cart</h1>
+            <div class="cart-items">
+                <!-- Items will be dynamically added here by JavaScript -->
+            </div>
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotal-price">₱0.00</span>
+            </div>
+            <div class="cart-delivery">
+                <span>Delivery Fee:</span>
+                <span id="delivery-fee">₱30.00</span>
+            </div>
+            <div class="cart-total">
+                <div class="total-info">
+                    <span class="total-items">Total (<span id="total-items">0</span> item):</span>
+                    <span class="total-price" id="cart-total-price">₱0.00</span>
+                </div>
+                <button class="checkout-button">Checkout</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="container-menu">
+        <div class="menu-options">
+            <h1>CATEGORIES</h1>
+            <a href="#takoyaki1" class="menu-button">Takoyaki ( 4pcs )</a>
+            <a href="#babytako" class="menu-button">Bento</a>
+            <a href="#sushi1" class="menu-button">Sushi ( 8pcs )</a>
+            <a href="#ramen1" class="menu-button">Ramen</a>
+            <a href="#drinks" class="menu-button">Drinks</a>
+        </div>
+        <div class="list-and-contacts">
+            <div class="menu-list" id="takoyaki1">
+                <h1>OUR MENU</h1>
+                <p id="takoyaki" class="menutitle">TAKOYAKI</p>
+                <div class="menu-item" id="takoyaki-classic" onclick="showOrderForm('Takoyaki Classic', 'Description of Takoyaki Classic...', '10.90', 'path/to/takoyaki-classic.jpg');">
+                    <div class="item-description">
+                        <h3>TAKOYAKI</h3>
+                        <p class="description">Octopus-filled savory balls topped with sauce, mayo, and bonito flakes.</p>
+                        <p class="price">₱60.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/takoyakii.png" alt="Takoyaki Classic">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>BACONYAKI</h3>
+                        <p class="description">Takoyaki with crispy bacon bits for a smoky twist.</p>
+                        <p class="price">₱60.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/takoyakii.png" alt="Cheese Takoyaki">
+                    </div>
+                    </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>BACONCHEESEBLAST</h3>
+                        <p class="description">Takoyaki filled with bacon and melted cheese.</p>
+                        <p class="price">₱110.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/baconcheeseblast.jpg" alt="Spicy Takoyaki">
+                    </div>
+               </div>
+               <div class="menu-item">
+                <div class="item-description" >
+                    <h3>BABY TAKO</h3>
+                    <p class="description">Bite-sized takoyaki, perfect for snacking.</p>
+                    <p class="price" id="babytako">₱120.00</p>
+                </div>
+                <div class="item-image">
+                    <img src="Products-Image/babytako.png" alt="Spicy Takoyaki">
+                </div>
+           </div>
+        
+                <p id="bento" class="menutitle" >BENTO</p>
+                <div class="menu-item" >
+                    <div class="item-description">
+                        <h3>PORK TONKATSU</h3>
+                        <p class="description">Breaded, deep-fried pork cutlet with tangy sauce.</p>
+                        <p class="price">₱240.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/porktonkatsu.png" alt="Green Tea">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>CHICKEN KARAAGE</h3>
+                        <p class="description"> Japanese-style fried chicken, marinated and crispy.</p>
+                        <p class="price">₱240.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/chickenkaraage.png" alt="Matcha Latte">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>EBI TEMPURA</h3>
+                        <p class="description">Lightly battered and deep-fried shrimp.</p>
+                        <p class="price">₱240.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/ebitempura.jpg" alt="Bubble Tea">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>BEEF MISONO</h3>
+                        <p class="description">Thinly sliced beef in a sweet and savory miso sauce.</p>
+                        <p class="price" id="sushi1">₱250.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/beefmisono.png" alt="Bubble Tea">
+                    </div>
+                </div>
+                <p id="sushi" class="menutitle" >SUSHI</p>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>CALIFORNIA MAKI</h3>
+                        <p class="description">Thinly sliced beef in a sweet and savory miso sauce.</p>
+                        <p class="price">₱110.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/californiamaki.jpg" alt="Green Tea">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>BEEF ROLL</h3>
+                        <p class="description">Sushi roll with thin slices of beef and vegetables.</p>
+                        <p class="price">₱110.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/beefroll.png" alt="Matcha Latte">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>EBI ROLL</h3>
+                        <p class="description">Sushi roll featuring shrimp with avocado and cucumber.</p>
+                        <p class="price" id="ramen1">₱110.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/ebiroll.png" alt="Bubble Tea">
+                    </div>
+                </div>
+                <p id="ramen" class="menutitle" >RAMEN</p>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>HAKATA RAMEN</h3>
+                        <p class="description">Creamy pork bone broth ramen with firm noodles.</p>
+                        <p class="price">₱180.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/hakataramen.jpg" alt="Green Tea">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>PORK YAKISOBA</h3>
+                        <p class="description">Stir-fried noodles with pork and vegetables in savory sauce.</p>
+                        <p class="price">₱130.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/porkyakisobaa.png" alt="Matcha Latte">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-description">
+                        <h3>KANI SALAD</h3>
+                        <p class="description">Refreshing salad with imitation crab, cucumber, and mayo.</p>
+                        <p class="price">₱110.00</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="Products-Image/kanisaladd.png" alt="Bubble Tea">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="contacts">
+                <h2>Our address</h2>
+                <p class="address_c">@Block 120, Las Palmas Subdivision, Lot 61 Hyacinth, Santa Maria, 3022 Bulacan</p>
+                <h2>Contacts</h2>
+                <p><i class="fa-solid fa-envelope"></i>     dokidokitako@gmail.com</p>
+                <p class="phone_c"><i class="fa-solid fa-phone"></i> +63-916-7525-934</p>
+                <h2>Business hours</h2>
+                <select>
+                    <option value="Saturday">Saturday: 11:30 AM - 10:00 PM</option>
+                    <option value="Sunday">Sunday: 11:30 AM - 09:00 PM</option>
+                    <option value="Monday">Monday: 11:30 AM - 09:00 PM</option>
+                    <option value="Tuesday">Tuesday: Closed</option>
+                    <option value="Wednesday">Wednesday: 11:30 AM - 09:00 PM</option>
+                    <option value="Thursday">Thursday: 11:30 AM - 09:00 PM</option>
+                    <option value="Friday">Friday: 11:30 AM - 10:00 PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="order-form" id="orderForm">
+            <h2>Order Form</h2>
+            <div class="title_form">
+                <h3 id="itemTitle_form"></h3>
+            </div>
+            <div class="description-image_form">
+                <div class="description_form">
+                    <p id="itemDescription_form"></p>
+                    <p id="itemPrice_form"></p>
+                </div>
+                <div class="item-image_form">
+                    <img src="" id="itemImage_form" alt="Item Image">
+                </div>
+            </div>
+            <div class="toppings">
+                <h3>Toppings:</h3>
+                <div class="topping-item">
+                    <label>
+                        <input type="checkbox" name="topping" value="Topping 1"> Topping 1
+                    </label>
+                    <div class="topping-controls" style="display: none;">
+                        <button type="button" class="subtract-topping" id="subtracttopping"><i class="fas fa-minus"></i></button>
+                        <label for="quantity" id="quantityTopping"> 1 </label>
+                        <button type="button" class="add-topping" id="addtopping"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                
+                <div class="topping-item">
+                    <label>
+                        <input type="checkbox" name="topping" value="Topping 2"> Topping 2
+                    </label>
+                    <div class="topping-controls" style="display: none;">
+                        <button type="button" class="subtract-topping" id="subtracttopping"><i class="fas fa-minus"></i></button>
+                        <label for="quantity" id="quantityTopping"> 1 </label>
+                        <button type="button" class="add-topping" id="addtopping"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                
+                <div class="topping-item">
+                    <label>
+                        <input type="checkbox" name="topping" value="Topping 3"> Topping 3
+                    </label>
+                    <div class="topping-controls" style="display: none;">
+                        <button type="button" class="subtract-topping" id="subtracttopping"><i class="fas fa-minus"></i></button>
+                        <label for="quantity" id="quantityTopping"> 1 </label>
+                        <button type="button" class="add-topping" id="addtopping"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="order-actions">
+                <div class="item-counter">
+                    <button type="button" id="decreaseQuantity"><i class="fas fa-minus"></i></button>
+                    <label for="quantity" id="quantityLabel"> 1 </label>
+                    <button type="button" id="increaseQuantity"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="add-to-cart">
+                    <button id="addToCartButton"><span id="addtocart_updatecart">Add to Cart</span> - <span id="totalPrice">₱0.00</span></button>
+                </div>
+            </div>
+        </div>  
+    </section>
+    <div class="overlay" id="overlay"></div>
+    <script>
+        // businesse hours (military format)
+        const storeOpeningHour = 1; // 9 AM
+        const storeClosingHour = 20; // 9 PM
+
+        // check if the store is closed
+        function isStoreClosed() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            return currentHour < storeOpeningHour || currentHour >= storeClosingHour;
+        }
+
+        // for real time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            const dayString = now.toLocaleString('en-us', { weekday: 'long' });
+            const cartButton = document.querySelector('.cart-button');
+    
+            if (isStoreClosed()) {
+                document.getElementById('current-time').textContent = 'Closed';
+                cartButton.classList.add('disabled');
+                cartButton.disabled = true;
+            } else {
+                document.getElementById('current-time').textContent = `${dayString} ${timeString}`;
+                cartButton.classList.remove('disabled');
+                cartButton.disabled = false;
+            }
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    
+        // automatic select current day
+        document.addEventListener('DOMContentLoaded', function() {
+            const dayOfWeek = new Date().toLocaleString('en-us', { weekday: 'long' });
+            const selectElement = document.querySelector('select');
+
+            const options = selectElement.options;
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].textContent.startsWith(dayOfWeek)) {
+                    options[i].selected = true;
+                    break;
+                }
+            }
+        });
+
+        //order checkbox
+        function toggleToppingControls(checkbox) {
+        const toppingControls = checkbox.parentNode.nextElementSibling;
+
+        if (checkbox.checked) {
+            toppingControls.style.display = 'block';
+        } else {
+            toppingControls.style.display = 'none';
+        }
+    }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            const orderForm = document.getElementById('orderForm');
+            const overlay = document.getElementById('overlay');
+            let quantity = 1;
+            let itemPrice = 0;
+            let originalItemPrice = 0;
+            const deliveryFee = 5.00;
+            let selectedToppings = [];
+            let editingCartItem = null;
+
+            // open order form
+            function showOrderForm(title, description, price, imageSrc) {
+                document.getElementById('itemTitle_form').textContent = title;
+                document.getElementById('itemDescription_form').textContent = description;
+                document.getElementById('itemPrice_form').textContent = `₱${price}`;
+                document.getElementById('itemImage_form').src = imageSrc;
+
+                originalItemPrice = parseFloat(price);
+                itemPrice = originalItemPrice * quantity;
+                totalAmount();
+
+                orderForm.classList.add('show');
+                overlay.classList.add('show');
+            }
+
+            menuItems.forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
+                    document.getElementById('addtocart_updatecart').textContent = "Add to Cart";
+
+                    // retrieve details
+                    const title = item.querySelector('.item-description h3').textContent.trim();
+                    const description = item.querySelector('.item-description .description').textContent.trim();
+                    const price = item.querySelector('.item-description .price').textContent.trim().slice(1); // Remove $ sign
+                    const imageSrc = item.querySelector('.item-image img').src;
+    
+                    showOrderForm(title, description, price, imageSrc);
+                });
+            });
+
+            // reset form
+            function resetOrderForm() {
+                quantity = 1;
+                itemPrice = 0;
+                updateQuantityLabel();
+                updateTotalPrice();
+
+                if (!editingCartItem) {
+                    const toppingCheckboxes = document.getElementsByName('topping');
+                    toppingCheckboxes.forEach(function(checkbox) {
+                        checkbox.checked = false;
+                        toggleToppingControls(checkbox);
+
+                        const quantityLabel = checkbox.parentNode.nextElementSibling.querySelector('#quantityTopping');
+                        quantityLabel.textContent =  1 ;
+                    });
+                    selectedToppings = [];
+                }
+
+                editingCartItem = null;
+            }
+
+            //close order form
+            overlay.addEventListener('click', function() {
+                orderForm.classList.remove('show');
+                overlay.classList.remove('show');
+                resetOrderForm();
+                document.getElementById('addtocart_updatecart').textContent = "Add to Cart";
+            });
+
+            document.getElementById('increaseQuantity').addEventListener('click', function() {
+                quantity++;
+                updateQuantityLabel();
+            });
+
+            document.getElementById('decreaseQuantity').addEventListener('click', function() {
+                if (quantity > 1) {
+                    quantity--;
+                    updateQuantityLabel();
+                }
+            });
+
+            // total price
+            function totalAmount() {
+                updateQuantityLabel();
+                updateTotalPrice();
+            }
+
+            function updateQuantityLabel() {
+                document.getElementById('quantityLabel').textContent = `${quantity}`;
+                updateTotalPrice();
+            }
+
+            // toppings
+            const toppingCheckboxes = document.getElementsByName('topping');
+            toppingCheckboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    toggleToppingControls(checkbox);
+                    handleToppingSelection();
+                });
+            });
+
+            function handleToppingSelection() {
+                selectedToppings = [];
+                toppingCheckboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        selectedToppings.push({
+                            name: checkbox.value,
+                            quantity: parseInt(checkbox.parentNode.nextElementSibling.querySelector('#quantityTopping').textContent.trim())
+                        });
+                    }
+                });
+                updateTotalPrice();
+            }
+
+            const toppingPrices = {
+                "Topping 1": 1.50,
+                "Topping 2": 2.00,
+                "Topping 3": 1.00
+            };
+
+            // quantity of topping
+            const toppingItems = document.querySelectorAll('.topping-item');
+
+            toppingItems.forEach(function(item) {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                const subtractButton = item.querySelector('.subtract-topping');
+                const addButton = item.querySelector('.add-topping');
+                const quantityLabel = item.querySelector('#quantityTopping');
+
+                subtractButton.addEventListener('click', function() {
+                    let quantity = parseInt(quantityLabel.textContent);
+                    if (quantity > 1) {
+                            quantity--;
+                        quantityLabel.textContent =  `${quantity}` ;
+                        handleToppingSelection();
+                    }
+                });
+
+                addButton.addEventListener('click', function() {
+                    let quantity = parseInt(quantityLabel.textContent);
+                    quantity++;
+                    quantityLabel.textContent =  `${quantity}` ;
+                    handleToppingSelection();
+                });
+                toggleToppingControls(checkbox);
+
+                checkbox.addEventListener('change', function() {
+                    toggleToppingControls(checkbox);
+                    handleToppingSelection();
+                });
+            });
+
+            function updateTotalPrice() {
+                let totalPrice = originalItemPrice * quantity;
+
+                selectedToppings.forEach(function(topping) {
+                    totalPrice += toppingPrices[topping.name] * topping.quantity;
+                });
+                
+                document.getElementById('totalPrice').textContent = `$${totalPrice.toFixed(2)}`;
+                itemPrice = totalPrice;
+            }
+
+            //counter on cart
+            function setupCartItemCounter(newItem, originalItemPrice, quantity, toppings) {
+                newItem.querySelector('#decreaseQuantity_cart').addEventListener('click', function() {
+                    if (quantity > 1) {
+                        quantity--;
+                        newItem.querySelector('#quantityLabel_cart').textContent =  `${quantity}` ;
+                        updateCartItemTotalPrice(newItem, originalItemPrice, quantity, toppings);
+                        updateCartTotals();
+                    }
+                });
+
+                newItem.querySelector('#increaseQuantity_cart').addEventListener('click', function() {
+                    quantity++;
+                    newItem.querySelector('#quantityLabel_cart').textContent =  `${quantity}` ;
+                    updateCartItemTotalPrice(newItem, originalItemPrice, quantity, toppings);
+                    updateCartTotals();
+                });
+            }
+
+            //item price on cart
+            function updateCartItemTotalPrice(itemElement, originalItemPrice, quantity, toppings) {
+                const toppingCost = toppings.reduce((sum, topping) => {
+                    return sum + toppingPrices[topping];
+                }, 0);
+
+                const totalPrice = (originalItemPrice * quantity) + toppingCost;
+                itemElement.querySelector('.cart-item-price p').textContent = `₱${totalPrice.toFixed(2)}`;
+            }
+
+            // remove and edit
+            function setupRemoveAndEditButtons(cartItem) {
+                cartItem.querySelector('.remove-item').addEventListener('click', function() {
+                    cartItem.remove();
+                    updateCartTotals();
+                });
+            }
+
+            // add to cart
+            document.getElementById('addToCartButton').addEventListener('click', function() {
+                if (editingCartItem) {
+                    // update existing cart item
+                    editingCartItem.querySelector('.cart-itemname-toppings h4').textContent = document.getElementById('itemTitle_form').textContent;
+                    editingCartItem.querySelector('.cart-itemname-toppings p').textContent = document.getElementById('itemDescription_form').textContent;
+                    editingCartItem.querySelector('.cart-item-price p').textContent = `₱${itemPrice.toFixed(2)}`;
+                    editingCartItem.querySelector('.cart-item-image img').src = document.getElementById('itemImage_form').src;
+                    editingCartItem.querySelector('#quantityLabel_cart').textContent =  `${quantity}` ;
+                    setupCartItemCounter(editingCartItem, originalItemPrice, quantity, selectedToppings);
+
+                    editingCartItem = null;
+                } 
+                else {
+                    // Add new item to cart
+                    let totalPrice = originalItemPrice * quantity;
+
+                    selectedToppings.forEach(function(topping) {
+                        totalPrice += toppingPrices[topping.name] * topping.quantity;
+                    });
+                    const itemName = document.getElementById('itemTitle_form').textContent;
+                    const description = document.getElementById('itemDescription_form').textContent;
+                    const imageSrc = document.getElementById('itemImage_form').src;
+
+                    alert(`Added ${quantity} ${document.getElementById('itemTitle_form').textContent} to cart. Total Price: ₱${totalPrice.toFixed(2)}`);
+
+                    const newItem = document.createElement('div');
+                    newItem.classList.add('cart-item');
+                    newItem.innerHTML = `
+                        <div class="cart-item-details">
+                            <div class="cart-item-image">
+                                <img src="${imageSrc}" alt="${itemName}">
+                            </div>
+                            <div class="cart-itemname-toppings">
+                                <h4>${itemName}</h4>
+                                <p>${description}</p>
+                            </div>
+                            <div class="cart-item-price">
+                                <p>₱${totalPrice.toFixed(2)}</p>
+                            </div>
+                        </div>
+                        <div class="cart-item-buttons">
+                            <div class="cart-item-counter">
+                                <button type="button" id="decreaseQuantity_cart"><i class="fas fa-minus"></i></button>
+                                    <label for="quantity" id="quantityLabel_cart"> ${quantity} </label>
+                                <button type="button" id="increaseQuantity_cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <div class="cart-item-remove_edit">
+                                <button class="remove-item">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    // Add item to cart
+                    const cartItemsContainer = document.querySelector('.cart-items');
+                    cartItemsContainer.appendChild(newItem);
+                    setupCartItemCounter(newItem, originalItemPrice, quantity, selectedToppings);
+                    setupRemoveAndEditButtons(newItem);
+                }
+
+                quantity = 1;
+                selectedToppings = [];
+                totalAmount();
+                orderForm.classList.remove('show');
+                overlay.classList.remove('show');
+                updateCartTotals();
+            });
+
+            // total item in cart
+            function updateCartTotals() {
+                let subtotal = 0;
+                let totalItems = 0;
+                const cartItems = document.querySelectorAll('.cart-item');
+
+                cartItems.forEach(function(item) {
+                    const priceText = item.querySelector('.cart-item-details .cart-item-price p').textContent;
+                    const itemTotal = parseFloat(priceText.slice(1));
+                    subtotal += itemTotal;
+                    totalItems++;
+                });
+
+                const total = subtotal + deliveryFee;
+                document.getElementById('subtotal-price').textContent = `₱${subtotal.toFixed(2)}`;
+                document.getElementById('cart-total-price').textContent = `₱${total.toFixed(2)}`;
+                document.getElementById('total-items').textContent = totalItems;
+                document.getElementById('displaytotal-items').textContent = totalItems;
+                document.getElementById('cart-displaytotal-price').textContent = `₱${total.toFixed(2)}`;
+            }
+        });
+
+        // for cart
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            const overlay = document.getElementById('overlay');
+            cart.classList.toggle('show');
+            overlay.classList.toggle('show');
+        }
+
+        // close cart
+        overlay.addEventListener('click', function() {
+            const cart = document.getElementById('cart');
+            const overlay = document.getElementById('overlay'); 
+
+            if (cart.classList.contains('show')) {
+                cart.classList.remove('show');
+                overlay.classList.remove('show');
+                document.getElementById('addtocart_updatecart').textContent = "Add to Cart";
+            }
+        });
+    </script>
+</body>
+</html>
